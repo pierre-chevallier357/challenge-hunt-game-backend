@@ -7,6 +7,7 @@ import org.springframework.web.server.ResponseStatusException;
 
 import javax.servlet.http.HttpServletResponse;
 import javax.sql.DataSource;
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -23,8 +24,8 @@ public class UserCRUD {
 	public ArrayList<User> allUsers(HttpServletResponse response) {
 		ArrayList<User> users = new ArrayList<>();
 
-		try {
-			PreparedStatement statement = dataSource.getConnection().prepareStatement(
+		try (Connection connection = dataSource.getConnection()) {
+			PreparedStatement statement = connection.prepareStatement(
 					"SELECT login, age FROM chamis"
 			);
 
@@ -46,8 +47,8 @@ public class UserCRUD {
 	@GetMapping("/{userId}")
 	public User read(@PathVariable(value = "userId") String id, HttpServletResponse response) {
 		User user = null;
-		try {
-			PreparedStatement statement = dataSource.getConnection().prepareStatement(
+		try (Connection connection = dataSource.getConnection()) {
+			PreparedStatement statement = connection.prepareStatement(
 					"SELECT login, age FROM chamis WHERE login = ?"
 			);
 			statement.setString(1,id);
@@ -74,8 +75,8 @@ public class UserCRUD {
 			throw new ResponseStatusException(HttpStatus.PRECONDITION_FAILED);
 		}
 
-		try {
-			PreparedStatement statement = dataSource.getConnection().prepareStatement(
+		try (Connection connection = dataSource.getConnection()) {
+			PreparedStatement statement = connection.prepareStatement(
 					"INSERT INTO chamis (login, age) VALUES (?, ?)"
 			);
 			statement.setString(1, u.getLogin());
@@ -96,8 +97,8 @@ public class UserCRUD {
 			throw new ResponseStatusException(HttpStatus.PRECONDITION_FAILED);
 		}
 
-		try {
-			PreparedStatement statement = dataSource.getConnection().prepareStatement(
+		try (Connection connection = dataSource.getConnection()) {
+			PreparedStatement statement = connection.prepareStatement(
 					"UPDATE chamis SET login = ?, age = ? WHERE login = ?"
 			);
 			statement.setString(1, u.getLogin());
@@ -114,8 +115,8 @@ public class UserCRUD {
 
 	@DeleteMapping("/{userId}")
 	void delete(@PathVariable(value = "userId") String id, HttpServletResponse response) {
-		try {
-			PreparedStatement statement = dataSource.getConnection().prepareStatement(
+		try (Connection connection = dataSource.getConnection()) {
+			PreparedStatement statement = connection.prepareStatement(
 					"DELETE FROM chamis WHERE login = ?"
 			);
 			statement.setString(1, id);
