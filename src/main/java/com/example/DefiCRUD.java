@@ -26,7 +26,7 @@ public class DefiCRUD {
 
 		try (Connection connection = dataSource.getConnection()) {
 			PreparedStatement statement = connection.prepareStatement(
-					"SELECT id, titre, datedecreation, description FROM defis"
+					"SELECT id, titre, datedecreation, description,login FROM defis"
 			);
 
 			ResultSet r = statement.executeQuery();
@@ -35,7 +35,8 @@ public class DefiCRUD {
 						r.getString("id"),
 						r.getString("titre"),
 						r.getString("datedecreation"),
-						r.getString("description")
+						r.getString("description"),
+						r.getString("login")
 				);
 				defis.add(defi);
 			}
@@ -62,7 +63,8 @@ public class DefiCRUD {
 						r.getString("id"),
 						r.getString("titre"),
 						r.getString("datedecreation"),
-						r.getString("description")
+						r.getString("description"),
+						r.getString("login")
 				);
 			} else {
 				throw new ResponseStatusException(HttpStatus.NOT_FOUND);
@@ -81,12 +83,13 @@ public class DefiCRUD {
 		}
 		try (Connection connection = dataSource.getConnection()) {
 			PreparedStatement statement = connection.prepareStatement(
-					"INSERT INTO defis (id, titre, datedecreation, description) VALUES (?, ?, TO_TIMESTAMP(?, 'DD-MM-YYYY HH24:MI'), ?)"
+					"INSERT INTO defis (id, titre, datedecreation, description,login) VALUES (?, ?, TO_TIMESTAMP(?, 'DD-MM-YYYY HH24:MI'), ?,?)"
 			);
 			statement.setString(1, d.getId());
 			statement.setString(2, d.getTitre());
 			statement.setString(3, d.getDatedecreation());
 			statement.setString(4, d.getDescritption());
+			statement.setString(5, d.getAuteur());
 
 			statement.executeUpdate();
 		} catch (SQLException throwables) {
@@ -105,13 +108,14 @@ public class DefiCRUD {
 
 		try (Connection connection = dataSource.getConnection()) {
 			PreparedStatement statement = connection.prepareStatement(
-					"UPDATE defis SET id = ?, titre = ?, datedecreation = TO_TIMESTAMP(?, 'DD-MM-YYYY HH24:MI'), description = ? WHERE id = ?"
+					"UPDATE defis SET id = ?, titre = ?, datedecreation = TO_TIMESTAMP(?, 'DD-MM-YYYY HH24:MI'), description = ? login = ? WHERE id = ?"
 			);
 			statement.setString(1, d.getId());
 			statement.setString(2, d.getTitre());
 			statement.setString(3, d.getDatedecreation());
 			statement.setString(4, d.getDescritption());
-			statement.setString(5, id);
+			statement.setString(5, d.getAuteur());
+			statement.setString(6, id);
 
 			statement.executeUpdate();
 		} catch (SQLException throwables) {
