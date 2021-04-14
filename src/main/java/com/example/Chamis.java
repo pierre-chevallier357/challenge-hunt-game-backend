@@ -1,27 +1,33 @@
 package com.example;
 
+import org.springframework.data.annotation.Id;
+
 public class Chamis {
-    private String login;
-    private int age;
+	@Id
+	private final String login;
 
-    public Chamis(String login, int age) {
-        this.login = login;
-        this.age = age;
-    }
+	private final int age;
+	private final int nbDefis;
 
-    public String getLogin() {
-        return login;
-    }
+	public Chamis(String login, int age, int nbDefis) {
+		this.login = login;
+		this.age = age;
+		this.nbDefis = nbDefis;
+	}
 
-    public void setLogin(String login) {
-        this.login = login;
-    }
+	public Chamis withLogin(String login) {
+		return new Chamis(login, age, nbDefis);
+	}
 
-    public int getAge() {
-        return age;
-    }
+	public String getLogin() {
+		return login;
+	}
 
-    public void setAge(int age) {
-        this.age = age;
-    }
+	public int getAge() {
+		return age;
+	}
+
+	public int getNbDefis() {
+		return nbDefis;
+	}
 }
