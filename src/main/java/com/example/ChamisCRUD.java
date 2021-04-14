@@ -33,7 +33,8 @@ public class ChamisCRUD {
 			while (r.next()) {
 				Chamis chamis = new Chamis(
 						r.getString("login"),
-						r.getInt("age")
+						r.getInt("age"),
+						r.getInt("nbdefi")
 				);
 				lesChamis.add(chamis);
 			}
@@ -49,15 +50,16 @@ public class ChamisCRUD {
 		Chamis chamis = null;
 		try (Connection connection = dataSource.getConnection()) {
 			PreparedStatement statement = connection.prepareStatement(
-					"SELECT login, age FROM chamis WHERE login = ?"
+					"SELECT login, age,nbdefi FROM chamis WHERE login = ?"
 			);
 			statement.setString(1,id);
 
 			ResultSet r = statement.executeQuery();
 			if (r.next()) {
 				chamis = new Chamis(
-						r.getString(1),
-						r.getInt(2)
+					r.getString("login"),
+					r.getInt("age"),
+					r.getInt("nbdefi")
 				);
 			} else {
 				throw new ResponseStatusException(HttpStatus.NOT_FOUND);
@@ -77,10 +79,11 @@ public class ChamisCRUD {
 
 		try (Connection connection = dataSource.getConnection()) {
 			PreparedStatement statement = connection.prepareStatement(
-					"INSERT INTO chamis (login, age) VALUES (?, ?)"
+					"INSERT INTO chamis (login, age,nbdefi) VALUES (?, ?,?)"
 			);
 			statement.setString(1, c.getLogin());
 			statement.setInt(2, c.getAge());
+			statement.setInt(3, c.getNb_defis());
 
 			statement.executeUpdate();
 		} catch (SQLException throwables) {
