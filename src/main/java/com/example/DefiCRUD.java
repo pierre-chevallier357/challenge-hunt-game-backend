@@ -26,7 +26,7 @@ public class DefiCRUD {
 
 		try (Connection connection = dataSource.getConnection()) {
 			PreparedStatement statement = connection.prepareStatement(
-					"SELECT id, titre, datedecreation, description,login FROM defis"
+					"SELECT id, titre, datedecreation, description, login FROM defis"
 			);
 
 			ResultSet r = statement.executeQuery();
@@ -53,7 +53,7 @@ public class DefiCRUD {
 
 		try (Connection connection = dataSource.getConnection()) {
 			PreparedStatement statement = connection.prepareStatement(
-					"SELECT id, titre, datedecreation, description FROM defis WHERE id = ?"
+					"SELECT id, titre, datedecreation, description, login FROM defis WHERE id = ?"
 			);
 			statement.setString(1, id);
 
@@ -83,7 +83,7 @@ public class DefiCRUD {
 		}
 		try (Connection connection = dataSource.getConnection()) {
 			PreparedStatement statement = connection.prepareStatement(
-					"INSERT INTO defis (id, titre, datedecreation, description,login) VALUES (?, ?, TO_TIMESTAMP(?, 'DD-MM-YYYY HH24:MI'), ?,?)"
+					"INSERT INTO defis (id, titre, datedecreation, description, login) VALUES (?, ?, TO_TIMESTAMP(?, 'DD-MM-YYYY HH24:MI'), ?, ?)"
 			);
 			statement.setString(1, d.getId());
 			statement.setString(2, d.getTitre());

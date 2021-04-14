@@ -71,7 +71,7 @@ public class ChamisCRUD {
 
 	@PostMapping("/{ChamisId}")
 	public Chamis create(@PathVariable(value = "ChamisId") String id, @RequestBody Chamis c, HttpServletResponse response) {
-		if (!u.getLogin().equals(id)) {
+		if (!c.getLogin().equals(id)) {
 			throw new ResponseStatusException(HttpStatus.PRECONDITION_FAILED);
 		}
 
@@ -93,7 +93,7 @@ public class ChamisCRUD {
 
 	@PutMapping("/{ChamisId}")
 	Chamis update(@PathVariable(value = "ChamisId") String id, @RequestBody Chamis c, HttpServletResponse response) {
-		if (!u.getLogin().equals(id)) {
+		if (!c.getLogin().equals(id)) {
 			throw new ResponseStatusException(HttpStatus.PRECONDITION_FAILED);
 		}
 
