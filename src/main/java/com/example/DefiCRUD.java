@@ -88,7 +88,7 @@ public class DefiCRUD {
 			statement.setString(1, d.getId());
 			statement.setString(2, d.getTitre());
 			statement.setString(3, d.getDatedecreation());
-			statement.setString(4, d.getDescritption());
+			statement.setString(4, d.getDescription());
 			statement.setString(5, d.getAuteur());
 
 			statement.executeUpdate();
@@ -113,7 +113,7 @@ public class DefiCRUD {
 			statement.setString(1, d.getId());
 			statement.setString(2, d.getTitre());
 			statement.setString(3, d.getDatedecreation());
-			statement.setString(4, d.getDescritption());
+			statement.setString(4, d.getDescription());
 			statement.setString(5, d.getAuteur());
 			statement.setString(6, id);
 

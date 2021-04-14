@@ -4,14 +4,14 @@ public class Defi {
 	private String id;
 	private String titre;
 	private String datedecreation;
-	private String descritption;
+	private String description;
 	private String auteur;
 
-	public Defi(String id, String titre, String datedecreation, String descritption, String auteur) {
+	public Defi(String id, String titre, String datedecreation, String description, String auteur) {
 		this.id = id;
 		this.titre = titre;
 		this.datedecreation = datedecreation;
-		this.descritption = descritption;
+		this.description = description;
 		this.auteur = auteur;
 	}
 
@@ -39,12 +39,12 @@ public class Defi {
 		this.datedecreation = datecreation;
 	}
 
-	public String getDescritption() {
-		return descritption;
+	public String getDescription() {
+		return description;
 	}
 
-	public void setDescritption(String descritption) {
-		this.descritption = descritption;
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 	public String getAuteur() {
