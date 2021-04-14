@@ -1,10 +1,10 @@
 package com.example;
 
-public class User {
+public class Chamis {
     private String login;
     private int age;
 
-    public User(String login, int age) {
+    public Chamis(String login, int age) {
         this.login = login;
         this.age = age;
     }

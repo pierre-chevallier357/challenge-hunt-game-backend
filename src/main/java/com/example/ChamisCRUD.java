@@ -15,14 +15,14 @@ import java.util.ArrayList;
 
 @RestController
 @CrossOrigin
-@RequestMapping("/api/users")
-public class UserCRUD {
+@RequestMapping("/api/chamis")
+public class ChamisCRUD {
 	@Autowired
 	private DataSource dataSource;
 
 	@GetMapping("/")
-	public ArrayList<User> allUsers(HttpServletResponse response) {
-		ArrayList<User> users = new ArrayList<>();
+	public ArrayList<Chamis> allChamis(HttpServletResponse response) {
+		ArrayList<Chamis> lesChamis = new ArrayList<>();
 
 		try (Connection connection = dataSource.getConnection()) {
 			PreparedStatement statement = connection.prepareStatement(
@@ -31,22 +31,22 @@ public class UserCRUD {
 
 			ResultSet r = statement.executeQuery();
 			while (r.next()) {
-				User user = new User(
+				Chamis chamis = new Chamis(
 						r.getString("login"),
 						r.getInt("age")
 				);
-				users.add(user);
+				lesChamis.add(chamis);
 			}
 		} catch (SQLException throwables) {
 			throwables.printStackTrace();
 		}
 
-		return users;
+		return lesChamis;
 	}
 
-	@GetMapping("/{userId}")
-	public User read(@PathVariable(value = "userId") String id, HttpServletResponse response) {
-		User user = null;
+	@GetMapping("/{ChamisId}")
+	public Chamis read(@PathVariable(value = "ChamisId") String id, HttpServletResponse response) {
+		Chamis chamis = null;
 		try (Connection connection = dataSource.getConnection()) {
 			PreparedStatement statement = connection.prepareStatement(
 					"SELECT login, age FROM chamis WHERE login = ?"
@@ -55,7 +55,7 @@ public class UserCRUD {
 
 			ResultSet r = statement.executeQuery();
 			if (r.next()) {
-				user = new User(
+				chamis = new Chamis(
 						r.getString(1),
 						r.getInt(2)
 				);
@@ -66,11 +66,11 @@ public class UserCRUD {
 			throwables.printStackTrace();
 		}
 
-		return user;
+		return chamis;
 	}
 
-	@PostMapping("/{userId}")
-	public User create(@PathVariable(value = "userId") String id, @RequestBody User u, HttpServletResponse response) {
+	@PostMapping("/{ChamisId}")
+	public Chamis create(@PathVariable(value = "ChamisId") String id, @RequestBody Chamis c, HttpServletResponse response) {
 		if (!u.getLogin().equals(id)) {
 			throw new ResponseStatusException(HttpStatus.PRECONDITION_FAILED);
 		}
@@ -79,8 +79,8 @@ public class UserCRUD {
 			PreparedStatement statement = connection.prepareStatement(
 					"INSERT INTO chamis (login, age) VALUES (?, ?)"
 			);
-			statement.setString(1, u.getLogin());
-			statement.setInt(2, u.getAge());
+			statement.setString(1, c.getLogin());
+			statement.setInt(2, c.getAge());
 
 			statement.executeUpdate();
 		} catch (SQLException throwables) {
@@ -88,11 +88,11 @@ public class UserCRUD {
 			throw new ResponseStatusException(HttpStatus.FORBIDDEN);
 		}
 
-		return u;
+		return c;
 	}
 
-	@PutMapping("/{userId}")
-	User update(@PathVariable(value = "userId") String id, @RequestBody User u, HttpServletResponse response) {
+	@PutMapping("/{ChamisId}")
+	Chamis update(@PathVariable(value = "ChamisId") String id, @RequestBody Chamis c, HttpServletResponse response) {
 		if (!u.getLogin().equals(id)) {
 			throw new ResponseStatusException(HttpStatus.PRECONDITION_FAILED);
 		}
@@ -101,8 +101,8 @@ public class UserCRUD {
 			PreparedStatement statement = connection.prepareStatement(
 					"UPDATE chamis SET login = ?, age = ? WHERE login = ?"
 			);
-			statement.setString(1, u.getLogin());
-			statement.setInt(2, u.getAge());
+			statement.setString(1, c.getLogin());
+			statement.setInt(2, c.getAge());
 			statement.setString(3, id);
 
 			statement.executeUpdate();
@@ -110,11 +110,11 @@ public class UserCRUD {
 			throwables.printStackTrace();
 			throw new ResponseStatusException(HttpStatus.NOT_FOUND);
 		}
-		return u;
+		return c;
 	}
 
-	@DeleteMapping("/{userId}")
-	void delete(@PathVariable(value = "userId") String id, HttpServletResponse response) {
+	@DeleteMapping("/{ChamisId}")
+	void delete(@PathVariable(value = "ChamisId") String id, HttpServletResponse response) {
 		try (Connection connection = dataSource.getConnection()) {
 			PreparedStatement statement = connection.prepareStatement(
 					"DELETE FROM chamis WHERE login = ?"
