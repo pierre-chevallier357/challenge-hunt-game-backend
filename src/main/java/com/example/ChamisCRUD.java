@@ -26,7 +26,7 @@ public class ChamisCRUD {
 
 		try (Connection connection = dataSource.getConnection()) {
 			PreparedStatement statement = connection.prepareStatement(
-					"SELECT login, age FROM chamis"
+					"SELECT login, age, nbdefi FROM chamis"
 			);
 
 			ResultSet r = statement.executeQuery();
@@ -50,7 +50,7 @@ public class ChamisCRUD {
 		Chamis chamis = null;
 		try (Connection connection = dataSource.getConnection()) {
 			PreparedStatement statement = connection.prepareStatement(
-					"SELECT login, age,nbdefi FROM chamis WHERE login = ?"
+					"SELECT login, age, nbdefi FROM chamis WHERE login = ?"
 			);
 			statement.setString(1,id);
 
@@ -79,7 +79,7 @@ public class ChamisCRUD {
 
 		try (Connection connection = dataSource.getConnection()) {
 			PreparedStatement statement = connection.prepareStatement(
-					"INSERT INTO chamis (login, age,nbdefi) VALUES (?, ?,?)"
+					"INSERT INTO chamis (login, age, nbdefi) VALUES (?, ?, ?)"
 			);
 			statement.setString(1, c.getLogin());
 			statement.setInt(2, c.getAge());
