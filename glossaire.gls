@@ -5,8 +5,8 @@
 glossary model l3m-PI-serveur
 
 Chamis
-    | Utilisateur qui a créé au moins un `Defi`. Un `Chamis` est identifié
-    | par son login (ex : "carobis"), et a un âge (ex : "21") lorsqu'il
+    | Utilisateur de la plateforme qui a un compte. Un `Chamis` est identifié
+    | par son pseudo (ex : "carobis"), et a un âge (ex : "21") lorsqu'il
     | s'inscrit. Les `Chamis` sont toujours anonymes, c’est-à-dire qu'ils
     | ne connaissent pas l'identité des autres `Chamis`. Le singulier et
     | le pluriel de `Chamis` restent `Chamis`.
