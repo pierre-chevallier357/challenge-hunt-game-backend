@@ -44,7 +44,7 @@ CREATE TABLE arret
 (
     id_arret integer PRIMARY KEY,
     id_defi  varchar(10) REFERENCES defi,
-    nom      varchar(30),
+    nom      varchar(100),
     code     varchar(300),
     lien_map varchar(500)
 );
@@ -64,7 +64,7 @@ CREATE TABLE indice
     id_indice   integer PRIMARY KEY,
     id_defi     varchar(10) REFERENCES defi,
     numero      integer,
-    descritpion text,
+    description text,
     points      integer
 );
 
