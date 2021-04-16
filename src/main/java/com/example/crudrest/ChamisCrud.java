@@ -1,5 +1,7 @@
-package com.example;
+package com.example.crudrest;
 
+import com.example.entity.Chami;
+import com.example.repository.ChamiRepository;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

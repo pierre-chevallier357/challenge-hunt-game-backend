@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.example;
+package com.example.repository;
 
 /**
  * Fragment interface providing the {@link WithInsert#insert(Object)} signature.
