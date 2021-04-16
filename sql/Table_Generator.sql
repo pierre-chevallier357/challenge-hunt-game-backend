@@ -9,7 +9,7 @@ DROP TABLE IF EXISTS chami;
 DROP TYPE IF EXISTS defi_type;
 
 
-CREATE TYPE defi_type AS enum ('fun',' enigme', 'challenge',  'hardcore', 'franchement_mec');
+CREATE TYPE defi_type AS enum ('fun', 'enigme', 'challenge', 'hardcore', 'franchement_mec');
 
 CREATE TABLE chami
 (
@@ -19,7 +19,7 @@ CREATE TABLE chami
     age         integer,
     ville       varchar(30),
     nb_defis    integer,
-    description varchar(500)
+    description text
 );
 
 CREATE TABLE defi
@@ -34,10 +34,10 @@ CREATE TABLE defi
     mots_clefs        varchar(120),
     points            integer,
     duree             integer,
-    prologue          varchar(200),
-    description       varchar(1000),
-    epilogue          varchar(200),
-    commentaire       varchar(150)
+    prologue          text,
+    description       text,
+    epilogue          text,
+    commentaire       text
 );
 
 CREATE TABLE arret
@@ -64,7 +64,7 @@ CREATE TABLE indice
     id_indice   integer PRIMARY KEY,
     id_defi     varchar(10) REFERENCES defi,
     numero      integer,
-    descritpion varchar(1000),
+    descritpion text,
     points      integer
 );
 
@@ -79,20 +79,21 @@ CREATE TABLE visite
     mode_d      varchar(50),
     status      varchar(20),
     note        integer CHECK (note BETWEEN 0 AND 5),
-    score       integer
+    score       integer,
+    commentaire text
 );
 
 CREATE TABLE reponse
 (
-    id_question integer REFERENCES question,
-    id_visite   varchar(10) REFERENCES visite,
-    reponse     varchar(500),
-    PRIMARY KEY (id_question, id_visite)
+    question integer REFERENCES question,
+    visite   varchar(10) REFERENCES visite,
+    reponse  varchar(500),
+    PRIMARY KEY (question, visite)
 );
 
 CREATE TABLE indice_utilise
 (
-    id_visite varchar(10) REFERENCES visite,
-    id_indice integer REFERENCES indice,
-    PRIMARY KEY (id_visite, id_indice)
+    visite varchar(10) REFERENCES visite,
+    indice integer REFERENCES indice,
+    PRIMARY KEY (visite, indice)
 );

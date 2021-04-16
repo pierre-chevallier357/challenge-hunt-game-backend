@@ -1,13 +1,14 @@
 package com.example.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
 import lombok.With;
 import org.springframework.data.annotation.Id;
 
 import java.util.Date;
+import java.util.Set;
 
-@RequiredArgsConstructor
+@AllArgsConstructor
 @Getter
 public class Visite {
 	@Id
@@ -23,5 +24,16 @@ public class Visite {
     private final String status;
     private final int note;
     private final int score;
+    private final String commentaire;
 
+	private final Set<IndiceUtilise> indices;
+	private final Set<Reponse> reponses;
+
+	public void addIndice(Indice indice) {
+		indices.add(new IndiceUtilise(indice.getIdIndice()));
+	}
+
+	public void addQuestion(Question question, String reponse) {
+		this.reponses.add(new Reponse(question.getIdQuestion(), reponse));
+	}
 }
