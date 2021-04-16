@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @CrossOrigin
-@RequestMapping("/api/Questions")
+@RequestMapping("/api/questions")
 public class QuestionCrud extends CrudRest<Question, Integer, QuestionRepository> {
 	public QuestionCrud(QuestionRepository repository) {
 		super(repository);
