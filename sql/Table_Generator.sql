@@ -3,8 +3,8 @@ DROP TABLE IF EXISTS reponse;
 DROP TABLE IF EXISTS visite;
 DROP TABLE IF EXISTS indice;
 DROP TABLE IF EXISTS question;
-DROP TABLE IF EXISTS arret;
 DROP TABLE IF EXISTS defi;
+DROP TABLE IF EXISTS arret;
 DROP TABLE IF EXISTS chami;
 DROP TYPE IF EXISTS defi_type;
 
@@ -20,6 +20,14 @@ CREATE TABLE chami
     ville       varchar(30),
     nb_defis    integer,
     description text
+);
+
+CREATE TABLE arret
+(
+    id_arret integer PRIMARY KEY,
+    nom      varchar(100),
+    code     varchar(300),
+    lien_map varchar(500)
 );
 
 CREATE TABLE defi
@@ -41,13 +49,7 @@ CREATE TABLE defi
     commentaire       text
 );
 
-CREATE TABLE arret
-(
-    id_arret integer PRIMARY KEY,
-    nom      varchar(100),
-    code     varchar(300),
-    lien_map varchar(500)
-);
+
 
 CREATE TABLE question
 (
