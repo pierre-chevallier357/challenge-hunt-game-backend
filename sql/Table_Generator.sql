@@ -26,6 +26,7 @@ CREATE TABLE defi
 (
     id_defi           varchar(10) PRIMARY KEY,
     uid               integer REFERENCES chami,
+    id_arret          integer REFERENCES arret,
     titre             varchar(40),
     defi_type         defi_type,
     date_creation     timestamp,
@@ -43,7 +44,6 @@ CREATE TABLE defi
 CREATE TABLE arret
 (
     id_arret integer PRIMARY KEY,
-    id_defi  varchar(10) REFERENCES defi,
     nom      varchar(100),
     code     varchar(300),
     lien_map varchar(500)
