@@ -12,11 +12,11 @@ INSERT INTO chami (uid, email, pseudo, age, ville, nb_defis, description)
 VALUES (1, 'nautilusleswageur@swagmail.com', 'Yanis', 20, 'Valence', 1,
         '"Dans chaque enfant il y a un artiste. Le problème est de savoir comment rester un artiste en grandissant."');
         
-INSERT INTO arret (id_arret, id_defi, nom, code, lien_map)
+INSERT INTO arret (id_arret,  nom, code, lien_map)
 VALUES (1,  'VICTOR HUGO', 'SEM_GENVICTHUGO', 'NULL');
-INSERT INTO arret (id_arret, id_defi, nom, code, lien_map)
+INSERT INTO arret (id_arret,  nom, code, lien_map)
 VALUES (2,  'HUBERT DUBEDOUT - MAISON DU TOURISME', 'SEM_GENDUBEDOUT', 'NULL');
-INSERT INTO arret (id_arret, id_defi, nom, code, lien_map)
+INSERT INTO arret (id_arret,  nom, code, lien_map)
 VALUES (3,  'HUBERT DUBEDOUT - MAISON DU TOURISME', 'SEM_GENDUBEDOUT', 'NULL');
 
 INSERT INTO defi (id_defi, uid, titre, defi_type, date_creation, date_modification, version_d, mots_clefs,
