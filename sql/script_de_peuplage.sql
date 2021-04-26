@@ -11,9 +11,16 @@ VALUES (897, 'escribis@gmail.com', 'escribis', 43, 'Grenoble', 0, '  - Bravo à 
 INSERT INTO chami (uid, email, pseudo, age, ville, nb_defis, description)
 VALUES (1, 'nautilusleswageur@swagmail.com', 'Yanis', 20, 'Valence', 1,
         '"Dans chaque enfant il y a un artiste. Le problème est de savoir comment rester un artiste en grandissant."');
+        
+INSERT INTO arret (id_arret, id_defi, nom, code, lien_map)
+VALUES (1,  'VICTOR HUGO', 'SEM_GENVICTHUGO', 'NULL');
+INSERT INTO arret (id_arret, id_defi, nom, code, lien_map)
+VALUES (2,  'HUBERT DUBEDOUT - MAISON DU TOURISME', 'SEM_GENDUBEDOUT', 'NULL');
+INSERT INTO arret (id_arret, id_defi, nom, code, lien_map)
+VALUES (3,  'HUBERT DUBEDOUT - MAISON DU TOURISME', 'SEM_GENDUBEDOUT', 'NULL');
 
 INSERT INTO defi (id_defi, uid, titre, defi_type, date_creation, date_modification, version_d, mots_clefs,
-                  points, duree, prologue, description, epilogue, commentaire)
+                  points, duree, prologue, description, epilogue, commentaire,id_arret)
 VALUES ('D145', 421, 'Le vert, je le mange !', 'enigme', '2021-04-01 15:03:00.000000', '2021-04-03 10:03:00.000000', 1,
         'Swag, Fun, Tes Morts', 5, 5, 'TA MERE', ' - Rendez vous à l''arrêt de bus "Grenoble - hôtel de ville".
           - Passe par "l''orangerie".
@@ -30,9 +37,9 @@ VALUES ('D145', 421, 'Le vert, je le mange !', 'enigme', '2021-04-01 15:03:00.00
           - "Les endroits qui sont subtils, qui ont du sens et qui durent dans le temps".
           - Oublie le mouton. Retourne toi.
           - Derrière toi tu vois la première tour en béton du monde ! (1924)
-          - Tour construite pour une exposition internationale [1].', 'GG WP');
+          - Tour construite pour une exposition internationale [1].', 'GG WP',2);
 INSERT INTO defi (id_defi, uid, titre, defi_type, date_creation, date_modification, version_d, mots_clefs,
-                  points, duree, prologue, description, epilogue, commentaire)
+                  points, duree, prologue, description, epilogue, commentaire,id_arret)
 VALUES ('D189', 421, 'Et l''écureil alors ?', 'franchement_mec', '2021-03-17 12:03:00.000000',
         '2021-03-22 13:03:00.000000', 3, 'Animaux, Distanciel, Fun, Patrimoine', 5, 5, 'PROLOGUE', '
           - C''est l''été. Tu as besoin de grand air.
@@ -48,9 +55,9 @@ VALUES ('D189', 421, 'Et l''écureil alors ?', 'franchement_mec', '2021-03-17 12
           - En fait le béton est rééllement né à Grenoble, c''est pas une blague.
           - Le bicentenaire a d''ailleurs eu lieu en 2017.
           - Vas faire udes  un tour du coté de l''hotel de ville tu trouveras
-        ', 'I''M A LOOSER, STILL A LOOSER IN LOVE');
+        ', 'I''M A LOOSER, STILL A LOOSER IN LOVE' , 2);
 INSERT INTO defi (id_defi, uid, titre, defi_type, date_creation, date_modification, version_d, mots_clefs,
-                  points, duree, prologue, description, epilogue, commentaire)
+                  points, duree, prologue, description, epilogue, commentaire,id_arret)
 VALUES ('D151', 1, 'Ils tournent et rond.', 'challenge', '2022-01-04 12:03:00.000000', '2022-02-04 09:20:00.000000', 2,
         'Mouton, StreetArt, Fun, Distanciel', 8, 10, 'LOURD PROLOG', '  - Il tourne en rond pour le plaisir des petits. Cherche le.
   - Si il n''y est pas demande à quelqu''un où il est quand il y est :-)
@@ -64,9 +71,9 @@ VALUES ('D151', 1, 'Ils tournent et rond.', 'challenge', '2022-01-04 12:03:00.00
   - "Si je mettais le mouton en bas, le ‘troupeau’ le verrait".
   - "Ce serait de la facilité".
   - "D’ailleurs j’aime qu’on me dise que l’on n’a pas vu mon mouton !"',
-        '  -  Pourrait être aussi associé à l''arrêt "Maison du tourisme - Hubert Dubedout"');
+        '  -  Pourrait être aussi associé à l''arrêt "Maison du tourisme - Hubert Dubedout"',1);
 INSERT INTO defi (id_defi, uid, titre, defi_type, date_creation, date_modification, version_d, mots_clefs,
-                  points, duree, prologue, description, epilogue, commentaire)
+                  points, duree, prologue, description, epilogue, commentaire,id_arret)
 VALUES ('D128', 1, 'Escape Game - Street Art', 'enigme', '2021-03-04 22:42:00.000000', '2021-03-04 22:42:00.000000', 1,
         'Mouton, StreetArt, Fun, Distanciel, Graaly, EscapeGame, Presentiel', 43, 150, '  - Possible uniquement en présentiel. ~ 2h30
   - Télécharge l''application "Graaly" sur ton téléphone portable.
@@ -78,9 +85,9 @@ VALUES ('D128', 1, 'Escape Game - Street Art', 'enigme', '2021-03-04 22:42:00.00
   - Ouvre l''application Graly et choisi l''escape game "Street art" - bon jeu.
   ', 'NULL', '  - Compléter la question 2 avec la bonne énigme. Il s''agit de la presque dernière énigme avec les lettres.
   - Ajouter éventuellement une ou deux autres questions sur ce qui a été vu pendant l''escape game.
-');
+',1);
 INSERT INTO defi (id_defi, uid, titre, defi_type, date_creation, date_modification, version_d, mots_clefs,
-                  points, duree, prologue, description, epilogue, commentaire)
+                  points, duree, prologue, description, epilogue, commentaire,id_arret)
 VALUES ('D127', 1, 'Le Méchoui et l''animal', 'enigme', '2022-03-03 16:03:00.000000', '2021-01-04 16:03:00.000000',
         1000, 'Mouton, StreetArt, Fun, Distanciel', 14, 15,
         '  - Pour le présentiel regarder la vidéo avant d''aller sur place.', '  - Une amie t''as demandé de préparer un grand méchoui pour 100 personnes.
@@ -92,14 +99,8 @@ VALUES ('D127', 1, 'Le Méchoui et l''animal', 'enigme', '2022-03-03 16:03:00.00
   - "C’est en feuilletant un magazine que j’ai trouvé la tête du mouton propre à une marque de skate peu connue des années 90."
 ', '  - La première version était ennuyeuse : premier mouton trouvé immédiatement (1mn max)
   - La version 2 ajoute deux moutons dont un à découvrir avec une petite vidéo 3mn.
-  -');
+  -',1);
 
-INSERT INTO arret (id_arret, id_defi, nom, code, lien_map)
-VALUES (1, 'D151', 'VICTOR HUGO', 'SEM_GENVICTHUGO', 'NULL');
-INSERT INTO arret (id_arret, id_defi, nom, code, lien_map)
-VALUES (2, 'D127', 'HUBERT DUBEDOUT - MAISON DU TOURISME', 'SEM_GENDUBEDOUT', 'NULL');
-INSERT INTO arret (id_arret, id_defi, nom, code, lien_map)
-VALUES (3, 'D128', 'HUBERT DUBEDOUT - MAISON DU TOURISME', 'SEM_GENDUBEDOUT', 'NULL');
 
 INSERT INTO question (id_question, id_defi, numero, question, secret, points)
 VALUES (1, 'D145', 1, 'Oui ?', 'Non.', 1000);
