@@ -11,8 +11,6 @@ public class Arret {
 	@Id
 	@With
 	private final int idArret;
-
-	private final String idDefi;
 	private final String nom;
 	private final String code;
 	private final String lienMap;
