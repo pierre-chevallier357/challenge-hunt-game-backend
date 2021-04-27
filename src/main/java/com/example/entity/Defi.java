@@ -15,6 +15,7 @@ public class Defi {
 	private final String idDefi;
 
 	private final int uid;
+	private final int idArret;
 	private final String titre;
 	private final DefiType defiType;
 	private final Date dateCreation;
