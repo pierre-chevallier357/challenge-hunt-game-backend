@@ -1,8 +1,13 @@
 package com.example.crudrest;
 
+import java.util.List;
+
 import com.example.entity.Defi;
+import com.example.entity.Visite;
 import com.example.repository.DefiRepository;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.example.repository.VisiteRepository;
