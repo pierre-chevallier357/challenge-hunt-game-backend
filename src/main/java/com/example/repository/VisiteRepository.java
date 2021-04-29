@@ -7,4 +7,5 @@ import java.util.List;
 
 public interface VisiteRepository extends CrudRepository<Visite, String>, WithInsert<Visite> {
 	List<Visite> findByUid(int uid);
+	List<Visite> findByIdDefi(String idDefi);
 }
