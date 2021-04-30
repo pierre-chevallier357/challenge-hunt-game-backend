@@ -5,11 +5,10 @@
 
 glossary model l3m-PI-serveur
 
-
 Arret
     | Point d'arrêt d'un bus ou d'un tramway sur le réseau SemiTag.
     | Nous nous servirons des `Arret`s comme d'un point de localisation pour
-    | un `Defi`. Un `Arret` est identifié par son idArret (ex : 1), et est
+    | un `Defi`. Un `Arret` est identifié par son id `Arret` (ex : 1), et est
     | composé d'un nom (ex : "VICTOR HUGO"), d'un code (ex : 
     | "SEM_GENVICTHUGO"), et d'un lien sur la carte (ex : "NULL").
 
@@ -50,7 +49,7 @@ Indice
     | numéro d'`Indice` pour ce `Defi` car il peut y en avoir plusieurs (ex : 1),
     | d'une description correspondant à l'`Indice` en lui même (ex : "Grenoble est
     | une ville verte. Donc avec des voitures vertes."), et d'un nombre de points
-    | que le `Chami` perd sur sa `Visite` en utilisant un indice (ex : 2).
+    | que le `Chami` perd sur sa `Visite` en utilisant un `Indice` (ex : 2).
 
 
 Question
