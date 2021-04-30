@@ -1,23 +1,82 @@
 //=========================================================================
-//               Modèle de glossaire pour le projet GreCha
+//              Modèle de glossaire pour le projet CyberChamis
+//                   du groupe Technical Thunder Guard Xi
 //=========================================================================
 
 glossary model l3m-PI-serveur
 
-Chamis
-    | Utilisateur de la plateforme qui a un compte. Un `Chamis` est identifié
-    | par son pseudo (ex : "carobis"), et a un âge (ex : "21") lorsqu'il
-    | s'inscrit. Les `Chamis` sont toujours anonymes, c’est-à-dire qu'ils
-    | ne connaissent pas l'identité des autres `Chamis`. Le singulier et
-    | le pluriel de `Chamis` restent `Chamis`.
+Arret
+    | Point d'arrêt d'un bus ou d'un tramway sur le réseau SemiTag.
+    | Nous nous servirons des `Arret`s comme d'un point de localisation pour
+    | un `Defi`. Un `Arret` est identifié par son id `Arret` (ex : 1), et est
+    | composé d'un nom (ex : "VICTOR HUGO"), d'un code (ex : 
+    | "SEM_GENVICTHUGO"), et d'un lien sur la carte (ex : "NULL").
+
+
+Chami
+    | Utilisateur de la plateforme qui a un compte. Un `Chami` est identifié
+    | par son id `Chami` (ex : 897), et est composé d'une adresse mail
+    | (ex : "escribis@gmail.com"), d'un pseudo (ex : "carobis"), d'un âge
+    | (ex : 43), d'une ville (ex : "Grenoble"), d'un nombre de défi créés 
+    | (ex : 0), et d'une description (ex : "- Bravo à tous pour vos contributions.
+    | C'est cool ! - Pour cette année pour ChaGra 2022 on pourrait[...]").
+    | Les `Chami`s sont toujours anonymes, c’est-à-dire qu'ils ne connaissent pas
+    | l'identité des autres `Chami`s à part leur pseudo.
+
 
 Defi
     | Ce sont les descriptions de défis à relever. Un `Defi` est identifié
-    | par son id (ex : "D189"), et est composé d'un titre (ex : "Le Méchoui"),
-    | d'une description textuelle (ex : "Descendre de l'arrêt Victor. Trouver
-    | les éléphants. Combien y-a-t 'il de chamois ? "), d'une date de création
-    | (ex : "15/03/2021 16:03") et a été créé par un auteur/`Chamis` (ex :
-    | "escribis"). Le principe est qu'une ou des personnes se rendent aux
-    | arrêts de bus spécifiés et relèvent le `Defi` en suivant les instructions
-    | fournies dans la description. 
+    | par son id défi (ex : "D145"), et est composé d'un id `Chami` qui l'a
+    | créé (ex : 421), d'un id `Arret` correspondant à sa localisation
+    | (ex : 2), d'un titre (ex : "Le vert, je le mange !"), d'un type
+    | (ex : "enigme"), d'une date de création (ex : 2021-04-01 15:03:00.000000),
+    | d'une dernière date de modification (ex : 2021-04-03 10:03:00.000000),
+    | d'un numéro de version (ex : 1), de mots clés (ex : "Swag, Fun"), d'un nombre
+    | maximum de points rapportés (ex : 5), d'une durée en minutes (ex : 5), d'un
+    | prologue (ex : "Bonne chance"), d'une description textuelle à suivre
+    | (ex : "- Rendez vous à l'arrêt de bus "Grenoble - hôtel de ville [...]"),
+    | d'un épilogue (ex : " - La devise officielle des moutons est "Je [...]"),
+    | et d'un commentaire de fin de défi (ex : "GG WP").
+    | Le principe est qu'une ou des personnes se rendent aux arrêts de bus
+    | spécifiés et relèvent le `Defi` en suivant les instructions fournies dans la
+    | description. 
 
+
+Indice
+    | Description textuelle afin d'aider un `Chami` qui serait bloqué pendant
+    | une `Visite`. Un `Indice` est identifié un id `Indice` (ex : 1), et est
+    | composé d'un id du `Defi` auquel la `Visite` est liée (ex : "D145"), d'un
+    | numéro d'`Indice` pour ce `Defi` car il peut y en avoir plusieurs (ex : 1),
+    | d'une description correspondant à l'`Indice` en lui même (ex : "Grenoble est
+    | une ville verte. Donc avec des voitures vertes."), et d'un nombre de points
+    | que le `Chami` perd sur sa `Visite` en utilisant un `Indice` (ex : 2).
+
+
+Question
+    | `Question` à laquelle un `Chami` doit répondre durant une `Visite` pour
+    | réussir un `Defi`. Une `Question` est identifiée par un id de `Question`
+    | (ex : 1), et est composée d'un id de `Defi` auquel elle doit répondre
+    | (ex : "D145"), d'un numéro de `Question` pour ce `Defi` car il peut y en avoir
+    | plusieurs (ex : 1), de la `Question` à laquelle répondre (ex : "Quelle est la
+    | couleur des moutons ?"), d'un secret dans la `Question` (ex : "Ça dépend"), et
+    | d'un nombre de points que rapporte la `Reponse` si trouvée (ex : 10).
+
+
+Reponse
+    | `Reponse` qu'un `Chami` donne pour répondre à une `Question` durant une
+    | `Visite` d'un `Defi`. Une `Reponse` est composée d'un numéro de `Reponse` pour
+    | ce `Visite` car il peut y en avoir plusieurs (ex : 1), d'un id de `Visite`
+    | (ex : "V145-1"), et de la `Reponse` en elle même (ex : "Blanc").
+
+
+Visite
+    | Correspond à une tentative par un `Chami` (fructueuse ou non) de
+    | relever le `Defi` en allant visiter le point du `Defi`. Une `Visite`
+    | est identifiée par son id `Visite` (ex : "V151-1"), et est composée d'un id
+    | de `Defi` (ex : "D145"), d'un visiteur identifié par son id `Chami` (ex : 421),
+    | d'une date de visite (ex : 2021-04-16 12:37:05.000000), d'un temps de
+    | réalisation en minutes (ex : 9), du numéro de version du `Defi` (ex : 1), d'un
+    | mode de jeu (ex : "présentiel"), d'un status d'avancement (ex : "répondu"), d'un
+    | nombre de points qu'elle a rapporté (ex : "4"), d'un score maximum de points
+    | atteignable (ex : "8"), et d'un commentaire laissé par le `Chami`
+    | (ex : Franchement sympa).

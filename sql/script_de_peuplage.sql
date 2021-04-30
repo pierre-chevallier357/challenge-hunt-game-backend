@@ -1,3 +1,4 @@
+--CHAMIS
 INSERT INTO chami (uid, email, pseudo, age, ville, nb_defis, description)
 VALUES (421, 'swag@swag.swag', 'swagus', 69, 'Swagland', 2, 'Swaging Hard on randoms');
 INSERT INTO chami (uid, email, pseudo, age, ville, nb_defis, description)
@@ -11,7 +12,22 @@ VALUES (897, 'escribis@gmail.com', 'escribis', 43, 'Grenoble', 0, '  - Bravo à 
 INSERT INTO chami (uid, email, pseudo, age, ville, nb_defis, description)
 VALUES (1, 'nautilusleswageur@swagmail.com', 'Yanis', 20, 'Valence', 1,
         '"Dans chaque enfant il y a un artiste. Le problème est de savoir comment rester un artiste en grandissant."');
-        
+INSERT INTO chami (uid, email, pseudo, age, ville, nb_defis, description)
+VALUES (2, 'pierre@uga.fr', 'Pierrot', 20, 'Grenoble', 0, 'J''aime la MIAGE');
+INSERT INTO chami (uid, email, pseudo, age, ville, nb_defis, description)
+VALUES (3, 'requiem@uga.fr', 'Requiem', 21, 'Montpellier', 0, 'J''aime Requiem de Mozart');
+INSERT INTO chami (uid, email, pseudo, age, ville, nb_defis, description)
+VALUES (4, 'anais@uga.fr', 'Anais', 21, 'Nantes', 0, 'Je souhaite participer aux défis distanciels !');
+INSERT INTO chami (uid, email, pseudo, age, ville, nb_defis, description)
+VALUES (8, 'pierre.chevallier2000@gmail.com', 'PierreChevallier', 20, 'Grenoble', 0, 'Compte de test');
+INSERT INTO chami (uid, email, pseudo, age, ville, nb_defis, description)
+VALUES (9, 'snoop.dogg@music.com', 'SnoopDogg', 49, 'Los Angeles', 0, 'I''m an american rapper');
+INSERT INTO chami (uid, email, pseudo, age, ville, nb_defis, description)
+VALUES (10, 'omar.sy@acteur.fr', 'Omar', 43, 'Paris', 0, 'Je suis un acteur français');
+
+
+
+--ARRETS
 INSERT INTO arret (id_arret,  nom, code, lien_map)
 VALUES (1,  'VICTOR HUGO', 'SEM_GENVICTHUGO', 'NULL');
 INSERT INTO arret (id_arret,  nom, code, lien_map)
@@ -19,10 +35,13 @@ VALUES (2,  'HUBERT DUBEDOUT - MAISON DU TOURISME', 'SEM_GENDUBEDOUT', 'NULL');
 INSERT INTO arret (id_arret,  nom, code, lien_map)
 VALUES (3,  'HUBERT DUBEDOUT - MAISON DU TOURISME', 'SEM_GENDUBEDOUT', 'NULL');
 
+
+
+--DEFIS
 INSERT INTO defi (id_defi, uid, titre, defi_type, date_creation, date_modification, version_d, mots_clefs,
                   points, duree, prologue, description, epilogue, commentaire,id_arret)
 VALUES ('D145', 421, 'Le vert, je le mange !', 'enigme', '2021-04-01 15:03:00.000000', '2021-04-03 10:03:00.000000', 1,
-        'Swag, Fun, Tes Morts', 5, 5, 'TA MERE', ' - Rendez vous à l''arrêt de bus "Grenoble - hôtel de ville".
+        'Swag, Fun', 5, 5, 'Bonne chance', ' - Rendez vous à l''arrêt de bus "Grenoble - hôtel de ville".
           - Passe par "l''orangerie".
           - Ca te donneras de l''énergie mais surtout ne dépasse pas les bornes !
           - Fatiguée ? T''as pas fait des bornes. Tu devrais avoir de l''énergie.
@@ -102,11 +121,16 @@ VALUES ('D127', 1, 'Le Méchoui et l''animal', 'enigme', '2022-03-03 16:03:00.00
   -',1);
 
 
-INSERT INTO question (id_question, id_defi, numero, question, secret, points)
-VALUES (1, 'D145', 1, 'Oui ?', 'Non.', 1000);
 
+--QUESTIONS
+INSERT INTO question (id_question, id_defi, numero, question, secret, points)
+VALUES (1, 'D145', 1, 'Quelle est la couleur des moutons ?', 'Ça dépend', 10);
+
+
+
+--INDICES
 INSERT INTO indice (id_indice, id_defi, numero, description, points)
-VALUES (1, 'D145', 1, 'Grenoble est un ville verte. Donc avec des voitures vertes.', 2);
+VALUES (1, 'D145', 1, 'Grenoble est une ville verte. Donc avec des voitures vertes.', 2);
 INSERT INTO indice (id_indice, id_defi, numero, description, points)
 VALUES (2, 'D145', 2, 'A l''angle de l''orangerie, regarde l''autre angle.', 2);
 INSERT INTO indice (id_indice, id_defi, numero, description, points)
@@ -118,12 +142,21 @@ VALUES (4, 'D127', 2, '        - En fait il est environ à 25m du premier mouton
 INSERT INTO indice (id_indice, id_defi, numero, description, points)
 VALUES (5, 'D127', 3, ' - Place toi entre l''angle de monoprix et la maison du tourisme.', 0);
 
+
+
+--VISITES
 INSERT INTO visite (id_visite, id_defi, uid, date_visite, temps, version_d, mode_d, status, note, score,
                     commentaire)
-VALUES ('V145-1', 'D145', 421, '2021-04-16 12:37:05.000000', 9, 1, 'présentiel', 'répondu', 4, 8, 'nul');
+VALUES ('V145-1', 'D145', 421, '2021-04-16 12:37:05.000000', 9, 1, 'présentiel', 'répondu', 4, 8, 'Franchement sympa');
 
+
+
+--REPONSES
 INSERT INTO reponse (question, visite, reponse)
-VALUES (1, 'V145-1', 'Yes');
+VALUES (1, 'V145-1', 'Blanc');
 
+
+
+--INDICES UTILISES
 INSERT INTO indice_utilise (visite, indice)
 VALUES ('V145-1', 1);
