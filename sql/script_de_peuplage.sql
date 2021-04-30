@@ -41,7 +41,7 @@ VALUES (3,  'HUBERT DUBEDOUT - MAISON DU TOURISME', 'SEM_GENDUBEDOUT', 'NULL');
 INSERT INTO defi (id_defi, uid, titre, defi_type, date_creation, date_modification, version_d, mots_clefs,
                   points, duree, prologue, description, epilogue, commentaire,id_arret)
 VALUES ('D145', 421, 'Le vert, je le mange !', 'enigme', '2021-04-01 15:03:00.000000', '2021-04-03 10:03:00.000000', 1,
-        'Swag, Fun, Tes Morts', 5, 5, 'TA MERE', ' - Rendez vous à l''arrêt de bus "Grenoble - hôtel de ville".
+        'Swag, Fun', 5, 5, 'Bonne chance', ' - Rendez vous à l''arrêt de bus "Grenoble - hôtel de ville".
           - Passe par "l''orangerie".
           - Ca te donneras de l''énergie mais surtout ne dépasse pas les bornes !
           - Fatiguée ? T''as pas fait des bornes. Tu devrais avoir de l''énergie.
@@ -124,13 +124,13 @@ VALUES ('D127', 1, 'Le Méchoui et l''animal', 'enigme', '2022-03-03 16:03:00.00
 
 --QUESTIONS
 INSERT INTO question (id_question, id_defi, numero, question, secret, points)
-VALUES (1, 'D145', 1, 'Oui ?', 'Non.', 1000);
+VALUES (1, 'D145', 1, 'Quelle est la couleur des moutons ?', 'Ça dépend', 10);
 
 
 
 --INDICES
 INSERT INTO indice (id_indice, id_defi, numero, description, points)
-VALUES (1, 'D145', 1, 'Grenoble est un ville verte. Donc avec des voitures vertes.', 2);
+VALUES (1, 'D145', 1, 'Grenoble est une ville verte. Donc avec des voitures vertes.', 2);
 INSERT INTO indice (id_indice, id_defi, numero, description, points)
 VALUES (2, 'D145', 2, 'A l''angle de l''orangerie, regarde l''autre angle.', 2);
 INSERT INTO indice (id_indice, id_defi, numero, description, points)
@@ -147,13 +147,13 @@ VALUES (5, 'D127', 3, ' - Place toi entre l''angle de monoprix et la maison du t
 --VISITES
 INSERT INTO visite (id_visite, id_defi, uid, date_visite, temps, version_d, mode_d, status, note, score,
                     commentaire)
-VALUES ('V145-1', 'D145', 421, '2021-04-16 12:37:05.000000', 9, 1, 'présentiel', 'répondu', 4, 8, 'nul');
+VALUES ('V145-1', 'D145', 421, '2021-04-16 12:37:05.000000', 9, 1, 'présentiel', 'répondu', 4, 8, 'Franchement sympa');
 
 
 
 --REPONSES
 INSERT INTO reponse (question, visite, reponse)
-VALUES (1, 'V145-1', 'Yes');
+VALUES (1, 'V145-1', 'Blanc');
 
 
 
