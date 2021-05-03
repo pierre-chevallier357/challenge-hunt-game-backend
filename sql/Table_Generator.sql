@@ -51,7 +51,7 @@ CREATE TABLE defi
 CREATE TABLE question
 (
     id_question serial PRIMARY KEY,
-    id_defi     serial REFERENCES defi,
+    id_defi     integer REFERENCES defi,
     numero      integer,
     question    varchar(500),
     secret      varchar(500),
@@ -61,7 +61,7 @@ CREATE TABLE question
 CREATE TABLE indice
 (
     id_indice   serial PRIMARY KEY,
-    id_defi     serial REFERENCES defi,
+    id_defi     integer REFERENCES defi,
     numero      integer,
     description text,
     points      integer
@@ -70,7 +70,7 @@ CREATE TABLE indice
 CREATE TABLE visite
 (
     id_visite   serial PRIMARY KEY,
-    id_defi     serial REFERENCES defi,
+    id_defi     integer REFERENCES defi,
     uid         integer REFERENCES chami,
     date_visite timestamp,
     temps       integer,
@@ -84,15 +84,15 @@ CREATE TABLE visite
 
 CREATE TABLE reponse
 (
-    question serial REFERENCES question,
-    visite   serial REFERENCES visite,
+    question integer REFERENCES question,
+    visite   integer REFERENCES visite,
     reponse  varchar(500),
     PRIMARY KEY (question, visite)
 );
 
 CREATE TABLE indice_utilise
 (
-    visite serial REFERENCES visite,
-    indice serial REFERENCES indice,
+    visite integer REFERENCES visite,
+    indice integer REFERENCES indice,
     PRIMARY KEY (visite, indice)
 );

@@ -25,12 +25,8 @@ abstract public class CrudRest<T, ID, REPO extends CrudRepository<T, ID> & WithI
 		return repository.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
 	}
 
-	@PostMapping("/{id}")
-	public T create(@PathVariable(value = "id") ID id, @RequestBody T entity) {
-		repository.findById(id).ifPresent(found -> {
-			throw new ResponseStatusException(HttpStatus.FORBIDDEN);
-		});
-
+	@PostMapping("/")
+	public T create(@RequestBody T entity) {
 		return repository.insert(entity);
 	}
 
