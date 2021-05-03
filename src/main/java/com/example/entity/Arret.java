@@ -11,8 +11,10 @@ public class Arret {
 	@Id
 	@With
 	private final int idArret;
-	
+
 	private final String nom;
 	private final String code;
+	private final float latitude;
+	private final float longitude;
 	private final String lienMap;
 }

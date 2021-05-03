@@ -21,10 +21,12 @@ CREATE TABLE chami
 
 CREATE TABLE arret
 (
-    id_arret serial PRIMARY KEY,
-    nom      varchar(100),
-    code     varchar(300),
-    lien_map varchar(500)
+    id_arret  serial PRIMARY KEY,
+    nom       varchar(100),
+    code      varchar(300),
+    latitude  real,
+    longitude real,
+    lien_map  varchar(500)
 );
 
 CREATE TABLE defi
@@ -45,8 +47,6 @@ CREATE TABLE defi
     epilogue          text,
     commentaire       text
 );
-
-
 
 CREATE TABLE question
 (

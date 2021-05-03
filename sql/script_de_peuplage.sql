@@ -29,14 +29,12 @@ SELECT SETVAL('chami_uid_seq', 10);
 
 
 --ARRETS
-INSERT INTO arret (id_arret,  nom, code, lien_map)
-VALUES (1,  'VICTOR HUGO', 'SEM_GENVICTHUGO', 'NULL');
-INSERT INTO arret (id_arret,  nom, code, lien_map)
-VALUES (2,  'HUBERT DUBEDOUT - MAISON DU TOURISME', 'SEM_GENDUBEDOUT', 'NULL');
-INSERT INTO arret (id_arret,  nom, code, lien_map)
-VALUES (3,  'HUBERT DUBEDOUT - MAISON DU TOURISME', 'SEM_GENDUBEDOUT', 'NULL');
+INSERT INTO arret (id_arret, nom, code, latitude, longitude, lien_map)
+VALUES (1,  'VICTOR HUGO', 'SEM_GENVICTHUGO', 5.72499, 45.18938, 'NULL');
+INSERT INTO arret (id_arret, nom, code, latitude, longitude, lien_map)
+VALUES (2,  'HUBERT DUBEDOUT - MAISON DU TOURISME', 'SEM_GENDUBEDOUT', 5.72822, 45.1902, 'NULL');
 
-SELECT SETVAL('arret_id_arret_seq', 3);
+SELECT SETVAL('arret_id_arret_seq', 2);
 
 
 --DEFIS
