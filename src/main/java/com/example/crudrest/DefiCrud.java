@@ -18,7 +18,7 @@ import com.example.repository.VisiteRepository;
 @RestController
 @CrossOrigin
 @RequestMapping("/api/defis")
-public class DefiCrud extends CrudRest<Defi, String, DefiRepository> {
+public class DefiCrud extends CrudRest<Defi, Integer, DefiRepository> {
 	private final VisiteRepository visiteRepository;
 	private QuestionRepository questionRepository;
 
@@ -29,12 +29,12 @@ public class DefiCrud extends CrudRest<Defi, String, DefiRepository> {
 	}
 
 	@GetMapping("/{idDefi}/visites")
-	public List<Visite> readVisites(@PathVariable(value = "idDefi") final String idDefi) {
+	public List<Visite> readVisites(@PathVariable(value = "idDefi") final int idDefi) {
 		return visiteRepository.findByIdDefi(idDefi);
 	}
 
 	@GetMapping("/{idDefi}/questions")
-	public List<Question> readQuestion(@PathVariable(value = "idDefi") final String idDefi) {
+	public List<Question> readQuestion(@PathVariable(value = "idDefi") final int idDefi) {
 		return questionRepository.findByIdDefi(idDefi);
 	}
 }

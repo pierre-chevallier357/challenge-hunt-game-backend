@@ -6,14 +6,11 @@ DROP TABLE IF EXISTS question;
 DROP TABLE IF EXISTS defi;
 DROP TABLE IF EXISTS arret;
 DROP TABLE IF EXISTS chami;
-DROP TYPE IF EXISTS defi_type;
 
-
-CREATE TYPE defi_type AS enum ('fun', 'enigme', 'challenge', 'hardcore', 'franchement_mec');
 
 CREATE TABLE chami
 (
-    uid         integer PRIMARY KEY,
+    uid         serial PRIMARY KEY,
     email       varchar(50) UNIQUE,
     pseudo      varchar(30) UNIQUE,
     age         integer,
@@ -24,7 +21,7 @@ CREATE TABLE chami
 
 CREATE TABLE arret
 (
-    id_arret integer PRIMARY KEY,
+    id_arret serial PRIMARY KEY,
     nom      varchar(100),
     code     varchar(300),
     lien_map varchar(500)
@@ -32,11 +29,11 @@ CREATE TABLE arret
 
 CREATE TABLE defi
 (
-    id_defi           varchar(10) PRIMARY KEY,
+    id_defi           serial PRIMARY KEY,
     uid               integer REFERENCES chami,
     id_arret          integer REFERENCES arret,
     titre             varchar(40),
-    defi_type         defi_type,
+    defi_type         varchar(50) CHECK (defi_type IN ('fun', 'enigme', 'challenge', 'hardcore', 'franchement_mec')),
     date_creation     timestamp,
     date_modification timestamp,
     version_d         integer,
@@ -53,8 +50,8 @@ CREATE TABLE defi
 
 CREATE TABLE question
 (
-    id_question integer PRIMARY KEY,
-    id_defi     varchar(10) REFERENCES defi,
+    id_question serial PRIMARY KEY,
+    id_defi     serial REFERENCES defi,
     numero      integer,
     question    varchar(500),
     secret      varchar(500),
@@ -63,8 +60,8 @@ CREATE TABLE question
 
 CREATE TABLE indice
 (
-    id_indice   integer PRIMARY KEY,
-    id_defi     varchar(10) REFERENCES defi,
+    id_indice   serial PRIMARY KEY,
+    id_defi     serial REFERENCES defi,
     numero      integer,
     description text,
     points      integer
@@ -72,8 +69,8 @@ CREATE TABLE indice
 
 CREATE TABLE visite
 (
-    id_visite   varchar(10) PRIMARY KEY,
-    id_defi     varchar(10) REFERENCES defi,
+    id_visite   serial PRIMARY KEY,
+    id_defi     serial REFERENCES defi,
     uid         integer REFERENCES chami,
     date_visite timestamp,
     temps       integer,
@@ -87,15 +84,15 @@ CREATE TABLE visite
 
 CREATE TABLE reponse
 (
-    question integer REFERENCES question,
-    visite   varchar(10) REFERENCES visite,
+    question serial REFERENCES question,
+    visite   serial REFERENCES visite,
     reponse  varchar(500),
     PRIMARY KEY (question, visite)
 );
 
 CREATE TABLE indice_utilise
 (
-    visite varchar(10) REFERENCES visite,
-    indice integer REFERENCES indice,
+    visite serial REFERENCES visite,
+    indice serial REFERENCES indice,
     PRIMARY KEY (visite, indice)
 );

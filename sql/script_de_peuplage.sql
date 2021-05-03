@@ -40,7 +40,7 @@ VALUES (3,  'HUBERT DUBEDOUT - MAISON DU TOURISME', 'SEM_GENDUBEDOUT', 'NULL');
 --DEFIS
 INSERT INTO defi (id_defi, uid, titre, defi_type, date_creation, date_modification, version_d, mots_clefs,
                   points, duree, prologue, description, epilogue, commentaire,id_arret)
-VALUES ('D145', 421, 'Le vert, je le mange !', 'enigme', '2021-04-01 15:03:00.000000', '2021-04-03 10:03:00.000000', 1,
+VALUES (1, 421, 'Le vert, je le mange !', 'enigme', '2021-04-01 15:03:00.000000', '2021-04-03 10:03:00.000000', 1,
         'Swag, Fun', 5, 5, 'Bonne chance', ' - Rendez vous à l''arrêt de bus "Grenoble - hôtel de ville".
           - Passe par "l''orangerie".
           - Ca te donneras de l''énergie mais surtout ne dépasse pas les bornes !
@@ -59,7 +59,7 @@ VALUES ('D145', 421, 'Le vert, je le mange !', 'enigme', '2021-04-01 15:03:00.00
           - Tour construite pour une exposition internationale [1].', 'GG WP',2);
 INSERT INTO defi (id_defi, uid, titre, defi_type, date_creation, date_modification, version_d, mots_clefs,
                   points, duree, prologue, description, epilogue, commentaire,id_arret)
-VALUES ('D189', 421, 'Et l''écureil alors ?', 'franchement_mec', '2021-03-17 12:03:00.000000',
+VALUES (2, 421, 'Et l''écureil alors ?', 'franchement_mec', '2021-03-17 12:03:00.000000',
         '2021-03-22 13:03:00.000000', 3, 'Animaux, Distanciel, Fun, Patrimoine', 5, 5, 'PROLOGUE', '
           - C''est l''été. Tu as besoin de grand air.
           - Demande à quelqu''un où est la maison de la montagne.
@@ -77,7 +77,7 @@ VALUES ('D189', 421, 'Et l''écureil alors ?', 'franchement_mec', '2021-03-17 12
         ', 'I''M A LOOSER, STILL A LOOSER IN LOVE' , 2);
 INSERT INTO defi (id_defi, uid, titre, defi_type, date_creation, date_modification, version_d, mots_clefs,
                   points, duree, prologue, description, epilogue, commentaire,id_arret)
-VALUES ('D151', 1, 'Ils tournent et rond.', 'challenge', '2022-01-04 12:03:00.000000', '2022-02-04 09:20:00.000000', 2,
+VALUES (3, 1, 'Ils tournent et rond.', 'challenge', '2022-01-04 12:03:00.000000', '2022-02-04 09:20:00.000000', 2,
         'Mouton, StreetArt, Fun, Distanciel', 8, 10, 'LOURD PROLOG', '  - Il tourne en rond pour le plaisir des petits. Cherche le.
   - Si il n''y est pas demande à quelqu''un où il est quand il y est :-)
   - Fait toi un selfie avec les 2 moutons en utilisant ton sens de la créativité.
@@ -93,7 +93,7 @@ VALUES ('D151', 1, 'Ils tournent et rond.', 'challenge', '2022-01-04 12:03:00.00
         '  -  Pourrait être aussi associé à l''arrêt "Maison du tourisme - Hubert Dubedout"',1);
 INSERT INTO defi (id_defi, uid, titre, defi_type, date_creation, date_modification, version_d, mots_clefs,
                   points, duree, prologue, description, epilogue, commentaire,id_arret)
-VALUES ('D128', 1, 'Escape Game - Street Art', 'enigme', '2021-03-04 22:42:00.000000', '2021-03-04 22:42:00.000000', 1,
+VALUES (4, 1, 'Escape Game - Street Art', 'enigme', '2021-03-04 22:42:00.000000', '2021-03-04 22:42:00.000000', 1,
         'Mouton, StreetArt, Fun, Distanciel, Graaly, EscapeGame, Presentiel', 43, 150, '  - Possible uniquement en présentiel. ~ 2h30
   - Télécharge l''application "Graaly" sur ton téléphone portable.
   - Cette application est indispensable pour jouer.
@@ -107,7 +107,7 @@ VALUES ('D128', 1, 'Escape Game - Street Art', 'enigme', '2021-03-04 22:42:00.00
 ',1);
 INSERT INTO defi (id_defi, uid, titre, defi_type, date_creation, date_modification, version_d, mots_clefs,
                   points, duree, prologue, description, epilogue, commentaire,id_arret)
-VALUES ('D127', 1, 'Le Méchoui et l''animal', 'enigme', '2022-03-03 16:03:00.000000', '2021-01-04 16:03:00.000000',
+VALUES (5, 1, 'Le Méchoui et l''animal', 'enigme', '2022-03-03 16:03:00.000000', '2021-01-04 16:03:00.000000',
         1000, 'Mouton, StreetArt, Fun, Distanciel', 14, 15,
         '  - Pour le présentiel regarder la vidéo avant d''aller sur place.', '  - Une amie t''as demandé de préparer un grand méchoui pour 100 personnes.
   - On t''as dit qu''il y avait 4 moutons qui se courraient après autour de la maison du tourisme.
@@ -124,39 +124,39 @@ VALUES ('D127', 1, 'Le Méchoui et l''animal', 'enigme', '2022-03-03 16:03:00.00
 
 --QUESTIONS
 INSERT INTO question (id_question, id_defi, numero, question, secret, points)
-VALUES (1, 'D145', 1, 'Quelle est la couleur des moutons ?', 'Ça dépend', 10);
+VALUES (1, 1, 1, 'Quelle est la couleur des moutons ?', 'Ça dépend', 10);
 
 
 
 --INDICES
 INSERT INTO indice (id_indice, id_defi, numero, description, points)
-VALUES (1, 'D145', 1, 'Grenoble est une ville verte. Donc avec des voitures vertes.', 2);
+VALUES (1, 1, 1, 'Grenoble est une ville verte. Donc avec des voitures vertes.', 2);
 INSERT INTO indice (id_indice, id_defi, numero, description, points)
-VALUES (2, 'D145', 2, 'A l''angle de l''orangerie, regarde l''autre angle.', 2);
+VALUES (2, 1, 2, 'A l''angle de l''orangerie, regarde l''autre angle.', 2);
 INSERT INTO indice (id_indice, id_defi, numero, description, points)
-VALUES (3, 'D127', 1, '        - Détourne toi des bonbons.
+VALUES (3, 2, 1, '        - Détourne toi des bonbons.
         - Ce n''est pas bon pour les dents.', 1);
 INSERT INTO indice (id_indice, id_defi, numero, description, points)
-VALUES (4, 'D127', 2, '        - En fait il est environ à 25m du premier mouton à vol d''oiseaux.
+VALUES (4, 3, 1, '        - En fait il est environ à 25m du premier mouton à vol d''oiseaux.
         - Mais si tu veux le voir il faudra prendre du recul...', 3);
 INSERT INTO indice (id_indice, id_defi, numero, description, points)
-VALUES (5, 'D127', 3, ' - Place toi entre l''angle de monoprix et la maison du tourisme.', 0);
+VALUES (5, 4, 1, ' - Place toi entre l''angle de monoprix et la maison du tourisme.', 0);
 
 
 
 --VISITES
 INSERT INTO visite (id_visite, id_defi, uid, date_visite, temps, version_d, mode_d, status, note, score,
                     commentaire)
-VALUES ('V145-1', 'D145', 421, '2021-04-16 12:37:05.000000', 9, 1, 'présentiel', 'répondu', 4, 8, 'Franchement sympa');
+VALUES (1, 1, 421, '2021-04-16 12:37:05.000000', 9, 1, 'présentiel', 'répondu', 4, 8, 'Franchement sympa');
 
 
 
 --REPONSES
 INSERT INTO reponse (question, visite, reponse)
-VALUES (1, 'V145-1', 'Blanc');
+VALUES (1, 1, 'Blanc');
 
 
 
 --INDICES UTILISES
 INSERT INTO indice_utilise (visite, indice)
-VALUES ('V145-1', 1);
+VALUES (1, 1);

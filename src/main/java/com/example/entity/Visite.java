@@ -13,7 +13,7 @@ import java.util.Set;
 public class Visite {
 	@Id
 	@With
-	private final String idVisite;
+	private final int idVisite;
 
 	private final String idDefi;
 	private final int uid;

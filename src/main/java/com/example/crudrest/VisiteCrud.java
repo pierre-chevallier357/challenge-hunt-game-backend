@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @CrossOrigin
 @RequestMapping("/api/visites")
-public class VisiteCrud extends CrudRest<Visite, String, VisiteRepository> {
+public class VisiteCrud extends CrudRest<Visite, Integer, VisiteRepository> {
 	public VisiteCrud(VisiteRepository repository) {
 		super(repository);
 	}

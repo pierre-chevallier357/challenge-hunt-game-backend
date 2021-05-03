@@ -12,7 +12,7 @@ import java.util.Date;
 public class Defi {
 	@Id
 	@With
-	private final String idDefi;
+	private final int idDefi;
 
 	private final int uid;
 	private final int idArret;
