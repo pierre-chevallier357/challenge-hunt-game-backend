@@ -12,7 +12,7 @@ public class Indice {
 	@With
 	private final int idIndice;
 
-	private final String idDefi;
+	private final int idDefi;
 	private final int numero;
 	private final String description;
 	private final int points;

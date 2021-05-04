@@ -15,7 +15,7 @@ public class Visite {
 	@With
 	private final int idVisite;
 
-	private final String idDefi;
+	private final int idDefi;
 	private final int uid;
 	private final Date dateVisite;
     private final int temps;

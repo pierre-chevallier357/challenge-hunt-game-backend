@@ -12,7 +12,7 @@ public class Question {
 	@With
 	private final int idQuestion;
 
-	private final String idDefi;
+	private final int idDefi;
 	private final int numero;
 	private final String question;
     private final String secret;
