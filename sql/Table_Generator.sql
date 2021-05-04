@@ -10,7 +10,7 @@ DROP TABLE IF EXISTS chami;
 
 CREATE TABLE chami
 (
-    uid         serial PRIMARY KEY,
+    uid         varchar(100) PRIMARY KEY,
     email       varchar(50) UNIQUE,
     pseudo      varchar(30) UNIQUE,
     age         integer,
@@ -32,7 +32,7 @@ CREATE TABLE arret
 CREATE TABLE defi
 (
     id_defi           serial PRIMARY KEY,
-    uid               integer REFERENCES chami,
+    uid               varchar(100) REFERENCES chami,
     id_arret          integer REFERENCES arret,
     titre             varchar(40),
     defi_type         varchar(50) CHECK (defi_type IN ('fun', 'enigme', 'challenge', 'hardcore', 'franchement_mec')),
@@ -42,6 +42,7 @@ CREATE TABLE defi
     mots_clefs        varchar(120),
     points            integer,
     duree             integer,
+    note_moyenne      integer,
     prologue          text,
     description       text,
     epilogue          text,
@@ -71,7 +72,7 @@ CREATE TABLE visite
 (
     id_visite   serial PRIMARY KEY,
     id_defi     integer REFERENCES defi,
-    uid         integer REFERENCES chami,
+    uid         varchar(100) REFERENCES chami,
     date_visite timestamp,
     temps       integer,
     version_d   integer,

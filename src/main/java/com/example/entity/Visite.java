@@ -16,7 +16,7 @@ public class Visite {
 	private final int idVisite;
 
 	private final int idDefi;
-	private final int uid;
+	private final String uid;
 	private final Date dateVisite;
     private final int temps;
 	private final int versionD;

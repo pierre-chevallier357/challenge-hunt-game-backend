@@ -10,7 +10,7 @@ import org.springframework.data.annotation.Id;
 public class Chami {
 	@Id
 	@With
-	private final int uid;
+	private final String uid;
 
 	private final String email;
 	private final String pseudo;

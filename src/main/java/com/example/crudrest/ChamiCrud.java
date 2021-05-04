@@ -13,7 +13,7 @@ import java.util.List;
 @RestController
 @CrossOrigin
 @RequestMapping("/api/chamis")
-public class ChamiCrud extends CrudRest<Chami, Integer, ChamiRepository> {
+public class ChamiCrud extends CrudRest<Chami, String, ChamiRepository> {
 	private final DefiRepository defiRepository;
 	private final VisiteRepository visiteRepository;
 
@@ -24,12 +24,12 @@ public class ChamiCrud extends CrudRest<Chami, Integer, ChamiRepository> {
 	}
 
 	@GetMapping("/{id}/defis")
-	public List<Defi> readDefis(@PathVariable(value = "id") final int id) {
+	public List<Defi> readDefis(@PathVariable(value = "id") final String id) {
 		return defiRepository.findByUid(id);
 	}
 
 	@GetMapping("/{id}/visites")
-	public List<Visite> readVisites(@PathVariable(value = "id") final int id) {
+	public List<Visite> readVisites(@PathVariable(value = "id") final String id) {
 		return visiteRepository.findByUid(id);
 	}
 }

@@ -14,7 +14,7 @@ public class Defi {
 	@With
 	private final int idDefi;
 
-	private final int uid;
+	private final String uid;
 	private final int idArret;
 	private final String titre;
 	private final DefiType defiType;
@@ -24,6 +24,7 @@ public class Defi {
 	private final String motsClefs;
 	private final int points;
 	private final int duree;
+	private final int noteMoyenne;
 	private final String prologue;
 	private final String description;
 	private final String epilogue;

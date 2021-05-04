@@ -1,31 +1,29 @@
 --CHAMIS
 INSERT INTO chami (uid, email, pseudo, age, ville, nb_defis, description)
-VALUES (1, 'swag@swag.swag', 'swagus', 69, 'Swagland', 2, 'Swaging Hard on randoms');
+VALUES ('1', 'swag@swag.swag', 'swagus', 69, 'Swagland', 2, 'Swaging Hard on randoms');
 INSERT INTO chami (uid, email, pseudo, age, ville, nb_defis, description)
-VALUES (2, 'wariorwars25@gmail.com', 'Barney', 23, 'Besançon', 0,
+VALUES ('2', 'wariorwars25@gmail.com', 'Barney', 23, 'Besançon', 0,
         '"J''ai cherché, j''ai cherché, j''ai cherché mais je ne pensais pas trouver le mouvement perpétuel pas du tout." -Léon Raoul Hatem, l''horloger de l''univers"');
 INSERT INTO chami (uid, email, pseudo, age, ville, nb_defis, description)
-VALUES (3, 'escribis@gmail.com', 'escribis', 43, 'Grenoble', 0, '  - Bravo à tous pour vos contributions. C''est cool !
+VALUES ('3', 'escribis@gmail.com', 'escribis', 43, 'Grenoble', 0, '  - Bravo à tous pour vos contributions. C''est cool !
   - Pour cette année pour ChaGra 2022 on pourrait voir avec la MDA.
   - Au passage vous devriez vous s''inscrire sur le site contribulle.org
   - Pour contribuer à quelque chose d''utile ca se passe là bas.');
 INSERT INTO chami (uid, email, pseudo, age, ville, nb_defis, description)
-VALUES (4, 'nautilusleswageur@swagmail.com', 'Yanis', 20, 'Valence', 1,
+VALUES ('4', 'nautilusleswageur@swagmail.com', 'Yanis', 20, 'Valence', 1,
         '"Dans chaque enfant il y a un artiste. Le problème est de savoir comment rester un artiste en grandissant."');
 INSERT INTO chami (uid, email, pseudo, age, ville, nb_defis, description)
-VALUES (5, 'pierre@uga.fr', 'Pierrot', 20, 'Grenoble', 0, 'J''aime la MIAGE');
+VALUES ('5', 'pierre@uga.fr', 'Pierrot', 20, 'Grenoble', 0, 'J''aime la MIAGE');
 INSERT INTO chami (uid, email, pseudo, age, ville, nb_defis, description)
-VALUES (6, 'requiem@uga.fr', 'Requiem', 21, 'Montpellier', 0, 'J''aime Requiem de Mozart');
+VALUES ('6', 'requiem@uga.fr', 'Requiem', 21, 'Montpellier', 0, 'J''aime Requiem de Mozart');
 INSERT INTO chami (uid, email, pseudo, age, ville, nb_defis, description)
-VALUES (7, 'anais@uga.fr', 'Anais', 21, 'Nantes', 0, 'Je souhaite participer aux défis distanciels !');
+VALUES ('7', 'anais@uga.fr', 'Anais', 21, 'Nantes', 0, 'Je souhaite participer aux défis distanciels !');
 INSERT INTO chami (uid, email, pseudo, age, ville, nb_defis, description)
-VALUES (8, 'pierre.chevallier2000@gmail.com', 'PierreChevallier', 20, 'Grenoble', 0, 'Compte de test');
+VALUES ('8', 'pierre.chevallier2000@gmail.com', 'PierreChevallier', 20, 'Grenoble', 0, 'Compte de test');
 INSERT INTO chami (uid, email, pseudo, age, ville, nb_defis, description)
-VALUES (9, 'snoop.dogg@music.com', 'SnoopDogg', 49, 'Los Angeles', 0, 'I''m an american rapper');
+VALUES ('9', 'snoop.dogg@music.com', 'SnoopDogg', 49, 'Los Angeles', 0, 'I''m an american rapper');
 INSERT INTO chami (uid, email, pseudo, age, ville, nb_defis, description)
-VALUES (10, 'omar.sy@acteur.fr', 'Omar', 43, 'Paris', 0, 'Je suis un acteur français');
-
-SELECT SETVAL('chami_uid_seq', 10);
+VALUES ('10', 'omar.sy@acteur.fr', 'Omar', 43, 'Paris', 0, 'Je suis un acteur français');
 
 
 --ARRETS
@@ -40,7 +38,7 @@ SELECT SETVAL('arret_id_arret_seq', 2);
 --DEFIS
 INSERT INTO defi (id_defi, uid, titre, defi_type, date_creation, date_modification, version_d, mots_clefs,
                   points, duree, prologue, description, epilogue, commentaire,id_arret)
-VALUES (1, 1, 'Le vert, je le mange !', 'enigme', '2021-04-01 15:03:00.000000', '2021-04-03 10:03:00.000000', 1,
+VALUES (1, '1', 'Le vert, je le mange !', 'enigme', '2021-04-01 15:03:00.000000', '2021-04-03 10:03:00.000000', 1,
         'Swag, Fun', 5, 5, 'Bonne chance', ' - Rendez vous à l''arrêt de bus "Grenoble - hôtel de ville".
           - Passe par "l''orangerie".
           - Ca te donneras de l''énergie mais surtout ne dépasse pas les bornes !
@@ -59,7 +57,7 @@ VALUES (1, 1, 'Le vert, je le mange !', 'enigme', '2021-04-01 15:03:00.000000', 
           - Tour construite pour une exposition internationale [1].', 'GG WP',2);
 INSERT INTO defi (id_defi, uid, titre, defi_type, date_creation, date_modification, version_d, mots_clefs,
                   points, duree, prologue, description, epilogue, commentaire,id_arret)
-VALUES (2, 2, 'Et l''écureil alors ?', 'franchement_mec', '2021-03-17 12:03:00.000000',
+VALUES (2, '2', 'Et l''écureil alors ?', 'franchement_mec', '2021-03-17 12:03:00.000000',
         '2021-03-22 13:03:00.000000', 3, 'Animaux, Distanciel, Fun, Patrimoine', 5, 5, 'PROLOGUE', '
           - C''est l''été. Tu as besoin de grand air.
           - Demande à quelqu''un où est la maison de la montagne.
@@ -77,7 +75,7 @@ VALUES (2, 2, 'Et l''écureil alors ?', 'franchement_mec', '2021-03-17 12:03:00.
         ', 'I''M A LOOSER, STILL A LOOSER IN LOVE' , 2);
 INSERT INTO defi (id_defi, uid, titre, defi_type, date_creation, date_modification, version_d, mots_clefs,
                   points, duree, prologue, description, epilogue, commentaire,id_arret)
-VALUES (3, 3, 'Ils tournent et rond.', 'challenge', '2022-01-04 12:03:00.000000', '2022-02-04 09:20:00.000000', 2,
+VALUES (3, '3', 'Ils tournent et rond.', 'challenge', '2022-01-04 12:03:00.000000', '2022-02-04 09:20:00.000000', 2,
         'Mouton, StreetArt, Fun, Distanciel', 8, 10, 'LOURD PROLOG', '  - Il tourne en rond pour le plaisir des petits. Cherche le.
   - Si il n''y est pas demande à quelqu''un où il est quand il y est :-)
   - Fait toi un selfie avec les 2 moutons en utilisant ton sens de la créativité.
@@ -93,7 +91,7 @@ VALUES (3, 3, 'Ils tournent et rond.', 'challenge', '2022-01-04 12:03:00.000000'
         '  -  Pourrait être aussi associé à l''arrêt "Maison du tourisme - Hubert Dubedout"',1);
 INSERT INTO defi (id_defi, uid, titre, defi_type, date_creation, date_modification, version_d, mots_clefs,
                   points, duree, prologue, description, epilogue, commentaire,id_arret)
-VALUES (4, 4, 'Escape Game - Street Art', 'enigme', '2021-03-04 22:42:00.000000', '2021-03-04 22:42:00.000000', 1,
+VALUES (4, '4', 'Escape Game - Street Art', 'enigme', '2021-03-04 22:42:00.000000', '2021-03-04 22:42:00.000000', 1,
         'Mouton, StreetArt, Fun, Distanciel, Graaly, EscapeGame, Presentiel', 43, 150, '  - Possible uniquement en présentiel. ~ 2h30
   - Télécharge l''application "Graaly" sur ton téléphone portable.
   - Cette application est indispensable pour jouer.
@@ -107,7 +105,7 @@ VALUES (4, 4, 'Escape Game - Street Art', 'enigme', '2021-03-04 22:42:00.000000'
 ',1);
 INSERT INTO defi (id_defi, uid, titre, defi_type, date_creation, date_modification, version_d, mots_clefs,
                   points, duree, prologue, description, epilogue, commentaire,id_arret)
-VALUES (5, 5, 'Le Méchoui et l''animal', 'enigme', '2022-03-03 16:03:00.000000', '2021-01-04 16:03:00.000000',
+VALUES (5, '5', 'Le Méchoui et l''animal', 'enigme', '2022-03-03 16:03:00.000000', '2021-01-04 16:03:00.000000',
         1000, 'Mouton, StreetArt, Fun, Distanciel', 14, 15,
         '  - Pour le présentiel regarder la vidéo avant d''aller sur place.', '  - Une amie t''as demandé de préparer un grand méchoui pour 100 personnes.
   - On t''as dit qu''il y avait 4 moutons qui se courraient après autour de la maison du tourisme.
@@ -150,7 +148,7 @@ SELECT SETVAL('indice_id_indice_seq', 5);
 --VISITES
 INSERT INTO visite (id_visite, id_defi, uid, date_visite, temps, version_d, mode_d, status, note, score,
                     commentaire)
-VALUES (1, 1, 1, '2021-04-16 12:37:05.000000', 9, 1, 'présentiel', 'répondu', 4, 8, 'Franchement sympa');
+VALUES (1, 1, '1', '2021-04-16 12:37:05.000000', 9, 1, 'présentiel', 'répondu', 4, 8, 'Franchement sympa');
 
 SELECT SETVAL('visite_id_visite_seq', 1);
 
