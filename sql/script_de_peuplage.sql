@@ -28,9 +28,9 @@ VALUES ('10', 'omar.sy@acteur.fr', 'Omar', 43, 'Paris', 0, 'Je suis un acteur fr
 
 --ARRETS
 INSERT INTO arret (id_arret, nom, code, latitude, longitude, lien_map)
-VALUES (1,  'VICTOR HUGO', 'SEM_GENVICTHUGO', 5.72499, 45.18938, 'NULL');
+VALUES (1,  'VICTOR HUGO', 'SEM_GENVICTHUGO', 45.18938, 5.72499, 'NULL');
 INSERT INTO arret (id_arret, nom, code, latitude, longitude, lien_map)
-VALUES (2,  'HUBERT DUBEDOUT - MAISON DU TOURISME', 'SEM_GENDUBEDOUT', 5.72822, 45.1902, 'NULL');
+VALUES (2,  'HUBERT DUBEDOUT - MAISON DU TOURISME', 'SEM_GENDUBEDOUT', 45.1902, 5.72822, 'NULL');
 
 SELECT SETVAL('arret_id_arret_seq', 2);
 

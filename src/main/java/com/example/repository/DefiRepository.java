@@ -7,4 +7,6 @@ import java.util.List;
 
 public interface DefiRepository extends CrudRepository<Defi, Integer>, WithInsert<Defi> {
 	List<Defi> findByUid(String uid);
+
+	List<Defi> findByIdArret(int idArret);
 }
