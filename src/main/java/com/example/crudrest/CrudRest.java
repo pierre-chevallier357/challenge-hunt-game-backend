@@ -9,7 +9,7 @@ import org.springframework.web.server.ResponseStatusException;
 import java.util.List;
 
 abstract public class CrudRest<T, ID, REPO extends CrudRepository<T, ID> & WithInsert<T>> {
-	private final REPO repository;
+	protected final REPO repository;
 
 	public CrudRest(REPO repository) {
 		this.repository = repository;
