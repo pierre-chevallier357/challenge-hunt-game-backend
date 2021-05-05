@@ -97,3 +97,89 @@ CREATE TABLE indice_utilise
     indice integer REFERENCES indice,
     PRIMARY KEY (visite, indice)
 );
+
+
+--TRIGGERS/FUNCTIONS
+
+--MISE À JOUR DE LA NOTE MOYENNE
+CREATE OR REPLACE FUNCTION meanupdater()
+    RETURNS trigger
+    LANGUAGE plpgsql
+AS
+$function$
+BEGIN
+    UPDATE defi SET note_moyenne = (SELECT AVG(note) FROM visite) WHERE defi.id_defi = new.id_defi;
+    RETURN new;
+END;
+$function$
+;
+
+CREATE TRIGGER meanprocessing
+    AFTER
+        INSERT OR UPDATE OR DELETE
+    ON
+        visite
+    FOR EACH ROW
+EXECUTE FUNCTION meanupdater();
+
+CREATE OR REPLACE FUNCTION meanupdaterold()
+    RETURNS trigger
+    LANGUAGE plpgsql
+AS
+$function$
+BEGIN
+    UPDATE defi SET note_moyenne = (SELECT AVG(note) FROM visite) WHERE defi.id_defi = old.id_defi;
+    RETURN old;
+END;
+$function$
+;
+
+CREATE TRIGGER meanprocessingold
+    AFTER
+        DELETE
+    ON
+        visite
+    FOR EACH ROW
+EXECUTE FUNCTION meanupdaterold();
+
+
+--IN/DÉCRÉMENTER NBDEFIS
+CREATE OR REPLACE FUNCTION decnbdefis()
+    RETURNS trigger
+    LANGUAGE plpgsql
+AS
+$function$
+BEGIN
+    UPDATE chami SET nb_defis = nb_defis - 1 WHERE uid = old.uid;
+    RETURN old;
+END;
+$function$
+;
+
+CREATE TRIGGER decrementthis
+    AFTER
+        DELETE
+    ON
+        defi
+    FOR EACH ROW
+EXECUTE FUNCTION decnbdefis();
+
+CREATE OR REPLACE FUNCTION public.incnbdefis()
+    RETURNS trigger
+    LANGUAGE plpgsql
+AS
+$function$
+BEGIN
+    UPDATE chami SET nb_defis = nb_defis + 1 WHERE uid = new.uid;
+    RETURN new;
+END;
+$function$
+;
+
+CREATE TRIGGER incrementthis
+    AFTER
+        INSERT
+    ON
+        defi
+    FOR EACH ROW
+EXECUTE FUNCTION incnbdefis();
