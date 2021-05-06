@@ -16,5 +16,7 @@ public class Question {
 	private final int numero;
 	private final String question;
     private final String secret;
-	private final int points;
+	private final int pointsQuestion;
+	private final String indice;
+	private final int pointsIndice;
 }

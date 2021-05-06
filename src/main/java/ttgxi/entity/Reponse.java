@@ -8,4 +8,5 @@ import lombok.RequiredArgsConstructor;
 public class Reponse {
 	private final int question;
 	private final String reponse;
+	private final boolean indiceUtilise;
 }

@@ -1,7 +1,5 @@
-DROP TABLE IF EXISTS indice_utilise;
 DROP TABLE IF EXISTS reponse;
 DROP TABLE IF EXISTS visite;
-DROP TABLE IF EXISTS indice;
 DROP TABLE IF EXISTS question;
 DROP TABLE IF EXISTS defi;
 DROP TABLE IF EXISTS arret;
@@ -51,21 +49,14 @@ CREATE TABLE defi
 
 CREATE TABLE question
 (
-    id_question serial PRIMARY KEY,
-    id_defi     integer REFERENCES defi,
-    numero      integer,
-    question    varchar(500),
-    secret      varchar(500),
-    points      integer
-);
-
-CREATE TABLE indice
-(
-    id_indice   serial PRIMARY KEY,
-    id_defi     integer REFERENCES defi,
-    numero      integer,
-    description text,
-    points      integer
+    id_question     serial PRIMARY KEY,
+    id_defi         integer REFERENCES defi,
+    numero          integer,
+    question        varchar(500),
+    secret          varchar(500),
+    points_question integer,
+    indice          varchar(500),
+    points_indice   integer
 );
 
 CREATE TABLE visite
@@ -85,17 +76,11 @@ CREATE TABLE visite
 
 CREATE TABLE reponse
 (
-    question integer REFERENCES question,
-    visite   integer REFERENCES visite,
-    reponse  varchar(500),
+    question       integer REFERENCES question,
+    visite         integer REFERENCES visite,
+    reponse        varchar(500),
+    indice_utilise boolean,
     PRIMARY KEY (question, visite)
-);
-
-CREATE TABLE indice_utilise
-(
-    visite integer REFERENCES visite,
-    indice integer REFERENCES indice,
-    PRIMARY KEY (visite, indice)
 );
 
 

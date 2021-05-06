@@ -122,27 +122,10 @@ SELECT SETVAL('defi_id_defi_seq', 5);
 
 
 --QUESTIONS
-INSERT INTO question (id_question, id_defi, numero, question, secret, points)
-VALUES (1, 1, 1, 'Quelle est la couleur des moutons ?', 'Ça dépend', 10);
+INSERT INTO question (id_question, id_defi, numero, question, secret, points_question, indice, points_indice)
+VALUES (1, 1, 1, 'Quelle est la couleur des moutons ?', 'Ça dépend', 10, 'Grenoble est une ville verte. Donc avec des voitures vertes.', 2);
 
 SELECT SETVAL('question_id_question_seq', 1);
-
-
---INDICES
-INSERT INTO indice (id_indice, id_defi, numero, description, points)
-VALUES (1, 1, 1, 'Grenoble est une ville verte. Donc avec des voitures vertes.', 2);
-INSERT INTO indice (id_indice, id_defi, numero, description, points)
-VALUES (2, 1, 2, 'A l''angle de l''orangerie, regarde l''autre angle.', 2);
-INSERT INTO indice (id_indice, id_defi, numero, description, points)
-VALUES (3, 2, 1, '        - Détourne toi des bonbons.
-        - Ce n''est pas bon pour les dents.', 1);
-INSERT INTO indice (id_indice, id_defi, numero, description, points)
-VALUES (4, 3, 1, '        - En fait il est environ à 25m du premier mouton à vol d''oiseaux.
-        - Mais si tu veux le voir il faudra prendre du recul...', 3);
-INSERT INTO indice (id_indice, id_defi, numero, description, points)
-VALUES (5, 4, 1, ' - Place toi entre l''angle de monoprix et la maison du tourisme.', 0);
-
-SELECT SETVAL('indice_id_indice_seq', 5);
 
 
 --VISITES
@@ -154,10 +137,5 @@ SELECT SETVAL('visite_id_visite_seq', 1);
 
 
 --REPONSES
-INSERT INTO reponse (question, visite, reponse)
-VALUES (1, 1, 'Blanc');
-
-
---INDICES UTILISES
-INSERT INTO indice_utilise (visite, indice)
-VALUES (1, 1);
+INSERT INTO reponse (question, visite, reponse, indice_utilise)
+VALUES (1, 1, 'Blanc', TRUE);

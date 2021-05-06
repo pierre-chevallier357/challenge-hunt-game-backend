@@ -26,14 +26,9 @@ public class Visite {
     private final int score;
     private final String commentaire;
 
-	private final Set<IndiceUtilise> indices;
 	private final Set<Reponse> reponses;
 
-	public void addIndice(Indice indice) {
-		indices.add(new IndiceUtilise(indice.getIdIndice()));
-	}
-
-	public void addQuestion(Question question, String reponse) {
-		this.reponses.add(new Reponse(question.getIdQuestion(), reponse));
+	public void addQuestion(Question question, String reponse, boolean indiceUtilise) {
+		this.reponses.add(new Reponse(question.getIdQuestion(), reponse, indiceUtilise));
 	}
 }
