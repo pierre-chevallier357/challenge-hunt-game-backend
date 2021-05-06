@@ -1,4 +1,4 @@
-package com.example.entity;
+package ttgxi.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

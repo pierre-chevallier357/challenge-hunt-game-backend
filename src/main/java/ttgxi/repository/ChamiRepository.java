@@ -1,6 +1,6 @@
-package com.example.repository;
+package ttgxi.repository;
 
-import com.example.entity.Chami;
+import ttgxi.entity.Chami;
 import org.springframework.data.repository.CrudRepository;
 
 public interface ChamiRepository extends CrudRepository<Chami, String>, WithInsert<Chami> {

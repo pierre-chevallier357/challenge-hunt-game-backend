@@ -1,9 +1,9 @@
-package com.example.crudrest;
+package ttgxi.crudrest;
 
-import com.example.entity.Arret;
-import com.example.entity.Defi;
-import com.example.repository.ArretRepository;
-import com.example.repository.DefiRepository;
+import ttgxi.entity.Arret;
+import ttgxi.entity.Defi;
+import ttgxi.repository.ArretRepository;
+import ttgxi.repository.DefiRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;

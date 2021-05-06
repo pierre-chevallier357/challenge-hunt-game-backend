@@ -1,6 +1,6 @@
-package com.example.repository;
+package ttgxi.repository;
 
-import com.example.entity.Arret;
+import ttgxi.entity.Arret;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.Optional;

@@ -13,25 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.example.repository;
-
-import org.springframework.data.jdbc.core.JdbcAggregateTemplate;
+package ttgxi.repository;
 
 /**
- * Fragment implementation providing the {@link WithInsert#insert(Object)} implementation.
+ * Fragment interface providing the {@link WithInsert#insert(Object)} signature.
  *
  * @author Jens Schauder
  */
-public class WithInsertImpl<T> implements WithInsert<T> {
+public interface WithInsert<T> {
 
-	private final JdbcAggregateTemplate template;
-
-	public WithInsertImpl(JdbcAggregateTemplate template) {
-		this.template = template;
-	}
-
-	@Override
-	public T insert(T t) {
-		return template.insert(t);
-	}
+	/**
+	 * Custom insert method.
+	 *
+	 * @param t
+	 * @return
+	 */
+	T insert(T t);
 }

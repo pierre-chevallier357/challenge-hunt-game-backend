@@ -1,11 +1,11 @@
-package com.example.crudrest;
+package ttgxi.crudrest;
 
-import com.example.entity.Chami;
-import com.example.entity.Defi;
-import com.example.entity.Visite;
-import com.example.repository.ChamiRepository;
-import com.example.repository.DefiRepository;
-import com.example.repository.VisiteRepository;
+import ttgxi.entity.Chami;
+import ttgxi.entity.Defi;
+import ttgxi.entity.Visite;
+import ttgxi.repository.ChamiRepository;
+import ttgxi.repository.DefiRepository;
+import ttgxi.repository.VisiteRepository;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

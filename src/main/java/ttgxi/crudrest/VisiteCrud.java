@@ -1,7 +1,7 @@
-package com.example.crudrest;
+package ttgxi.crudrest;
 
-import com.example.entity.Visite;
-import com.example.repository.VisiteRepository;
+import ttgxi.entity.Visite;
+import ttgxi.repository.VisiteRepository;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

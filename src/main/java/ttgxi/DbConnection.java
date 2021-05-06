@@ -1,4 +1,4 @@
-package com.example;
+package ttgxi;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;

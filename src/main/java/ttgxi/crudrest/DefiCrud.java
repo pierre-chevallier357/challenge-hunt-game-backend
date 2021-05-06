@@ -1,19 +1,19 @@
-package com.example.crudrest;
+package ttgxi.crudrest;
 
 import java.util.List;
 
-import com.example.entity.Defi;
-import com.example.entity.Question;
-import com.example.entity.Visite;
-import com.example.repository.DefiRepository;
-import com.example.repository.QuestionRepository;
+import ttgxi.entity.Defi;
+import ttgxi.entity.Question;
+import ttgxi.entity.Visite;
+import ttgxi.repository.DefiRepository;
+import ttgxi.repository.QuestionRepository;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import com.example.repository.VisiteRepository;
+import ttgxi.repository.VisiteRepository;
 
 @RestController
 @CrossOrigin

@@ -1,7 +1,7 @@
-package com.example.crudrest;
+package ttgxi.crudrest;
 
-import com.example.entity.Question;
-import com.example.repository.QuestionRepository;
+import ttgxi.entity.Question;
+import ttgxi.repository.QuestionRepository;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

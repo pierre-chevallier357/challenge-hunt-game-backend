@@ -1,7 +1,7 @@
-package com.example.crudrest;
+package ttgxi.crudrest;
 
-import com.example.entity.Indice;
-import com.example.repository.IndiceRepository;
+import ttgxi.entity.Indice;
+import ttgxi.repository.IndiceRepository;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

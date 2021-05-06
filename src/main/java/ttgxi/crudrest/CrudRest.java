@@ -1,6 +1,6 @@
-package com.example.crudrest;
+package ttgxi.crudrest;
 
-import com.example.repository.WithInsert;
+import ttgxi.repository.WithInsert;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
