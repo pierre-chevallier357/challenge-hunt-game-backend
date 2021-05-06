@@ -2,7 +2,7 @@
 INSERT INTO chami (uid, email, pseudo, age, ville, nb_defis, description)
 VALUES ('1', 'swag@swag.swag', 'swagus', 69, 'Swagland', 2, 'Swaging Hard on randoms');
 INSERT INTO chami (uid, email, pseudo, age, ville, nb_defis, description)
-VALUES ('2', 'wariorwars25@gmail.com', 'Barney', 23, 'Besançon', 0,
+VALUES ('2', 'barney@gmail.com', 'Barney', 23, 'Besançon', 0,
         '"J''ai cherché, j''ai cherché, j''ai cherché mais je ne pensais pas trouver le mouvement perpétuel pas du tout." -Léon Raoul Hatem, l''horloger de l''univers"');
 INSERT INTO chami (uid, email, pseudo, age, ville, nb_defis, description)
 VALUES ('3', 'escribis@gmail.com', 'escribis', 43, 'Grenoble', 0, '  - Bravo à tous pour vos contributions. C''est cool !
